@@ -63,4 +63,38 @@ console.log(Narray)
 // Creiamo una copia da questo array di partenza e aggiungiamo ai singoli elementi una nuova proprietà position che contiene una lettera casuale.
 // Non dobbiamo modificare l'array iniziale.
 
+var oggetti=[
+    {nome:'pippo',type:'casco', color:'red' },
+    {nome:'mario',type:'fionda', color:'orange' },
+    {nome:'luigi',type:'scudo', color:'green' },
+    {nome:'pina',type:'spaca', color:'blue' },
+
+]
+var oggettiNew= [];
+
+for(var i=0; i<oggetti.length; i++){
+    var copy={
+        nome:oggetti[i].nome,
+        type:oggetti[i].type,
+        color:oggetti[i].color,
+        position:alfabetRandom(),
+
+    }
+    oggettiNew.push(copy);
+}
+console.table(oggetti);
+console.table(oggettiNew);
+
+function alfabetRandom(){
+    var letters='abcdefghilmnropqrstuvwxyz'
+    var lettere=letters[randomNumber(0, letters.length - 1)]
+    return lettere;
+}
+
+function randomNumber(min, max){
+    return Math.floor(Math.random()*(max-min +1) + min);
+}
+
+
+
 }) //fine READY----------------------------
